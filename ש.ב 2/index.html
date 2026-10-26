@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171717">
+    <title>SafeAI | בדיקת תרגיל</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <a class="brand" href="#" aria-label="SafeAI, דף הבית">
+                <span class="brand-icon"><i class="bi bi-stars"></i></span>
+                <span>SafeAI <span class="brand-light">לימודים</span></span>
+            </a>
+
+            <div class="sidebar-card">
+                <span class="sidebar-card-icon"><i class="bi bi-mortarboard"></i></span>
+                <h2>לומדים ומשתפרים</h2>
+                <p>הגישו את התרגיל וקבלו בדיקה מפורטת שתעזור לכם להתקדם.</p>
+            </div>
+
+            <div class="sidebar-tips">
+                <div class="sidebar-section-title">לפני שמגישים</div>
+                <div class="tip-item">
+                    <i class="bi bi-check2-circle"></i>
+                    <span>העתיקו את ההנחיות המלאות של המורה</span>
+                </div>
+                <div class="tip-item">
+                    <i class="bi bi-check2-circle"></i>
+                    <span>צרפו את הפתרון שלכם במלואו</span>
+                </div>
+                <div class="tip-item">
+                    <i class="bi bi-check2-circle"></i>
+                    <span>קראו את ההמלצות כדי לדעת מה לשפר</span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                <span>מערכת בדיקה מבוססת AI</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <div class="eyebrow">מרחב הלמידה שלך</div>
+                    <h1>בדיקת תרגיל</h1>
+                </div>
+                <div class="topbar-badge"><i class="bi bi-shield-check"></i> משוב אישי</div>
+            </header>
+
+            <div class="page-content">
+                <section class="intro">
+                    <div class="intro-icon"><i class="bi bi-journal-check"></i></div>
+                    <div>
+                        <h2>מוכנים לבדוק את התרגיל?</h2>
+                        <p>מלאו את ההנחיות ואת הפתרון. נבדוק את ההגשה ונציג ציון, משוב והמלצות לשיפור.</p>
+                    </div>
+                </section>
+
+                <form id="homework-form" class="submission-card">
+                    <div class="section-heading">
+                        <div class="step-number">01</div>
+                        <div>
+                            <h2>פרטי ההגשה</h2>
+                            <p>כל השדות נדרשים לבדיקה מדויקת</p>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="teacher-task">הנחיות התרגיל</label>
+                        <span class="field-hint">מה התבקשתם לעשות?</span>
+                        <textarea id="teacher-task" name="teacher_task" rows="4" placeholder="הדביקו כאן את הנחיות המורה..." required></textarea>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="student-solution">הפתרון שלי</label>
+                        <span class="field-hint">כתבו או הדביקו את הפתרון המלא</span>
+                        <textarea id="student-solution" name="student_solution" rows="7" placeholder="הדביקו כאן את הפתרון שלכם..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <p><i class="bi bi-lock"></i> ההגשה נבדקת מול הנחיות התרגיל בלבד</p>
+                        <button id="submit-button" type="submit">
+                            <span class="button-label">בדיקת התרגיל</span>
+                            <i class="bi bi-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div id="status-message" class="status-message" role="status" aria-live="polite" hidden></div>
+                </form>
+
+                <section id="results" class="results-section" aria-live="polite" hidden>
+                    <div class="results-heading">
+                        <div class="step-number">02</div>
+                        <div>
+                            <h2>תוצאות הבדיקה</h2>
+                            <p>הנה המשוב שלך — כל צעד קטן הוא התקדמות</p>
+                        </div>
+                    </div>
+
+                    <div class="result-grid">
+                        <article class="result-card grade-card">
+                            <div class="result-card-heading">
+                                <span class="result-icon"><i class="bi bi-award"></i></span>
+                                <h3>הציון שלך</h3>
+                            </div>
+                            <div class="grade-display">
+                                <span id="grade-value">—</span>
+                                <span class="grade-out-of">/ 100</span>
+                            </div>
+                            <p class="grade-caption">ציון התרגיל</p>
+                        </article>
+
+                        <article class="result-card feedback-card">
+                            <div class="result-card-heading">
+                                <span class="result-icon"><i class="bi bi-chat-square-text"></i></span>
+                                <h3>משוב על הפתרון</h3>
+                            </div>
+                            <p id="feedback-text" class="feedback-text"></p>
+                        </article>
+                    </div>
+
+                    <article class="result-card recommendations-card">
+                        <div class="result-card-heading">
+                            <span class="result-icon"><i class="bi bi-lightbulb"></i></span>
+                            <div>
+                                <h3>המלצות להמשך</h3>
+                                <p>כמה דברים שכדאי לקחת איתכם לתרגיל הבא</p>
+                            </div>
+                        </div>
+                        <ul id="recommendations-list"></ul>
+                    </article>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

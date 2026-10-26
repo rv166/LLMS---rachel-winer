@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeAI Chat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- סרגל צד (Sidebar) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="btn btn-new-chat w-100 d-flex align-items-center justify-content-between">
+                    <span>שיחה חדשה</span>
+                    <i class="bi bi-plus-lg"></i>
+                </button>
+            </div>
+            
+            <div class="history-list">
+                <div class="history-label">שיחות אחרונות</div>
+                <a href="#" class="history-item active">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span class="text-truncate">שיחה נוכחית</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">S</div>
+                    <span>SafeAI User</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- אזור הצ'אט הראשי -->
+        <main class="chat-main">
+            <!-- כותרת עליונה -->
+            <header class="chat-header">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fw-semibold">SafeAI Quantum</span>
+                    <span class="badge text-bg-light border fw-normal">v1.0</span>
+                </div>
+            </header>
+
+            <!-- חלון הצגת ההודעות -->
+            <div class="messages-container" id="chat-box">
+                <div class="message-row bot">
+                    <div class="avatar bot-avatar"><i class="bi bi-robot"></i></div>
+                    <div class="message-content">
+                        שלום! במה אוכל לסייע לך היום?
+                    </div>
+                </div>
+            </div>
+
+            <!-- תיבת הקלדה בתחתית -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="הקלד הודעה..." rows="1"></textarea>
+                    <button id="send-button" type="button" title="שליחה">
+                        <i class="bi bi-arrow-up-short"></i>
+                    </button>
+                </div>
+                <div class="input-footer-text">
+                    SafeAI עשוי להציג מידע לא מדויק. ודאי נתונים חשובים.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
