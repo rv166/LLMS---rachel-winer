@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "title": "להכין את המצגת לשיעור",
+      "description": "להשלים את השקפים ולבדוק שהדוגמאות עובדות.",
+      "scheduled_for": "2026-10-31",
+      "due_date": "2026-10-31",
+      "priority": "high",
+      "status": "open"
+    },
+    {
+      "title": "לשלוח סיכום פגישה לצוות",
+      "description": "לרכז את ההחלטות והמשימות שעלו בפגישה.",
+      "scheduled_for": "2026-10-31",
+      "due_date": "2026-11-02",
+      "priority": "medium",
+      "status": "open"
+    },
+    {
+      "title": "לעבור על חומרי הקריאה",
+      "description": "לקרוא את הפרק ולכתוב שלוש נקודות מרכזיות.",
+      "scheduled_for": "2026-10-31",
+      "due_date": null,
+      "priority": "low",
+      "status": "open"
+    }
+  ]
+}
